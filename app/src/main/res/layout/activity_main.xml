@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.sample.albertson_coding_challenge.viewmodel.MainActivityViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edt_abbreviation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:hint="@string/acromine_hint_text"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_search"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/search_text"
+            android:textAllCaps="false"
+            android:textSize="15sp"
+            app:layout_constraintTop_toTopOf="@id/edt_abbreviation"
+            app:layout_constraintBottom_toBottomOf="@id/edt_abbreviation"
+            app:layout_constraintStart_toEndOf="@id/edt_abbreviation"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/edt_abbreviation"
+            app:layout_constraintBottom_toBottomOf="@id/edt_abbreviation"
+            app:layout_constraintStart_toEndOf="@id/edt_abbreviation"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_result_acromine"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textSize="15sp"
+            android:textColor="@color/grey"
+            android:text="@string/result_acromine_text"
+            app:layout_constraintTop_toBottomOf="@id/edt_abbreviation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv_main"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/tv_result_acromine"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:listitem="@layout/item_lfs_list"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

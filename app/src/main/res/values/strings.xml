@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Acromine Dictionary</string>
+
+    <string name="acromine_hint_text">Enter Acromine</string>
+    <string name="search_text">Search</string>
+    <string name="result_acromine_text">Result for <b>%s</b></string>
+    <string name="full_form_text">Full Form : %s</string>
+    <string name="frequency_text">Frequency : %s</string>
+    <string name="since_text">Since : %s</string>
+    <string name="variation_text">Variations : </string>
+    <string name="see_more_text"><u>View More</u></string>
+    <string name="see_less_text"><u>View Less</u></string>
+</resources>

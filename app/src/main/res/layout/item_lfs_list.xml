@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp"
+        app:cardCornerRadius="3dp"
+        app:cardElevation="3dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_full_form"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/full_form_text"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_frequency"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:text="@string/frequency_text"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@id/tv_year"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_full_form" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_year"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/since_text"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_frequency"
+                app:layout_constraintTop_toBottomOf="@id/tv_full_form" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_variation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/variation_text"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_frequency" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/see_more_text"
+                android:textColor="@color/purple_500"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_variation"
+                app:layout_constraintStart_toEndOf="@id/tv_variation"
+                app:layout_constraintTop_toTopOf="@id/tv_variation" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcv_var_list"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="5dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_variation"
+                app:layout_constraintTop_toBottomOf="@id/tv_variation"
+                tools:listitem="@layout/item_variation_list"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>
