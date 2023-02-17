@@ -5,7 +5,15 @@
 
     <data>
 
+        <import type="android.view.View"/>
 
+        <variable
+            name="lfsData"
+            type="com.sample.albertson_coding_challenge.model.Lfs" />
+
+        <variable
+            name="isShown"
+            type="Boolean" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
@@ -24,7 +32,7 @@
                 android:id="@+id/tv_full_form"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/full_form_text"
+                android:text="@{String.format(@string/full_form_text, lfsData.lf)}"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -37,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="5dp"
-                android:text="@string/frequency_text"
+                android:text="@{String.format(@string/frequency_text, lfsData.freq)}"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toStartOf="@id/tv_year"
@@ -50,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
-                android:text="@string/since_text"
+                android:text="@{String.format(@string/since_text, lfsData.since)}"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -72,7 +80,7 @@
                 android:id="@+id/tv_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/see_more_text"
+                android:text="@{isShown ? @string/see_less_text : @string/see_more_text}"
                 android:textColor="@color/purple_500"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="@id/tv_variation"
@@ -85,6 +93,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginTop="5dp"
+                android:visibility="@{isShown ? View.VISIBLE : View.GONE}"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/tv_variation"

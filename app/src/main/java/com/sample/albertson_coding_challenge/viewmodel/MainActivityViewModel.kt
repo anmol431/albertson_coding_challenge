@@ -8,10 +8,10 @@ import com.sample.albertson_coding_challenge.repository.MainActivityRepository
 
 class MainActivityViewModel : ViewModel() {
 
-    var servicesLiveData: MutableLiveData<AcromineData>? = null
+    var servicesLiveData: MutableLiveData<ArrayList<AcromineData>>? = null
 
-    fun getUser() : LiveData<AcromineData>? {
-        servicesLiveData = MainActivityRepository.getServicesApiCall()
+    fun getUser(param : String) : LiveData<ArrayList<AcromineData>>? {
+        servicesLiveData = MainActivityRepository.getServicesApiCall(param)
         return servicesLiveData
     }
 

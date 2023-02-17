@@ -4,6 +4,9 @@
 
     <data>
 
+        <variable
+            name="variationData"
+            type="com.sample.albertson_coding_challenge.model.Variations" />
 
     </data>
 
@@ -25,7 +28,7 @@
                 android:id="@+id/tv_full_form"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/full_form_text"
+                android:text="@{String.format(@string/full_form_text, variationData.lf)}"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -38,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="5dp"
-                android:text="@string/frequency_text"
+                android:text="@{String.format(@string/frequency_text, variationData.freq)}"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toStartOf="@id/tv_year"
@@ -51,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
-                android:text="@string/since_text"
+                android:text="@{String.format(@string/since_text, variationData.since)}"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"

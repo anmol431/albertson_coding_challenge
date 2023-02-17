@@ -10,25 +10,21 @@ import retrofit2.Response
 
 object MainActivityRepository {
 
-    val serviceSetterGetter = MutableLiveData<AcromineData>()
+    val serviceSetterGetter = MutableLiveData<ArrayList<AcromineData>>()
 
-    fun getServicesApiCall(): MutableLiveData<AcromineData> {
+    fun getServicesApiCall(param: String): MutableLiveData<ArrayList<AcromineData>> {
 
-        val call = RetrofitClient.apiInterface.getServices("SS")
+        val call = RetrofitClient.apiInterface.getServices(param)
 
-        call.enqueue(object : Callback<AcromineData> {
-            override fun onFailure(call: Call<AcromineData>, t: Throwable) {
-                // TODO("Not yet implemented")
+        call.enqueue(object : Callback<ArrayList<AcromineData>> {
+            override fun onFailure(call: Call<ArrayList<AcromineData>>, t: Throwable) {
                 Log.v("DEBUG : ", t.message.toString())
             }
 
             override fun onResponse(
-                call: Call<AcromineData>,
-                response: Response<AcromineData>
+                call: Call<ArrayList<AcromineData>>,
+                response: Response<ArrayList<AcromineData>>
             ) {
-                // TODO("Not yet implemented")
-                Log.v("DEBUG : ", response.body().toString())
-
                 val data = response.body()
 
                 serviceSetterGetter.value = data!!

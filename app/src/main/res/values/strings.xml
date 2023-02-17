@@ -3,7 +3,8 @@
 
     <string name="acromine_hint_text">Enter Acromine</string>
     <string name="search_text">Search</string>
-    <string name="result_acromine_text">Result for <b>%s</b></string>
+    <string name="error_text">Sorry, No data available!</string>
+    <string name="result_acromine_text">Result for %s</string>
     <string name="full_form_text">Full Form : %s</string>
     <string name="frequency_text">Frequency : %s</string>
     <string name="since_text">Since : %s</string>

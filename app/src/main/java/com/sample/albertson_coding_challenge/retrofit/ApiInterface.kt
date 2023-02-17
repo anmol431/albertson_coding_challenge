@@ -8,6 +8,6 @@ import retrofit2.http.Query
 interface ApiInterface {
 
     @GET("dictionary.py")
-    fun getServices(@Query("sf") sf: String): Call<AcromineData>
+    fun getServices(@Query("sf") sf: String): Call<ArrayList<AcromineData>>
 
 }
