@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         binding.btnSearch.setOnClickListener {
             hideKeyboard()
             binding.isLoading = true
+
             mainActivityViewModel.getUser(binding.edtAbbreviation.text.toString())!!
                 .observe(this) { acromineData ->
                     if (acromineData.size > 0) {
@@ -42,7 +43,8 @@ class MainActivity : AppCompatActivity() {
                         )
 
                         if (acromineData[0].lfs?.isNotEmpty() == true) {
-                            binding.rcvMain.adapter = acromineData[0].lfs?.let { LfsListAdapter(it.asList()) }
+                            binding.rcvMain.adapter =
+                                acromineData[0].lfs?.let { LfsListAdapter(it.asList()) }
                         }
                         binding.isDataFound = true
                         binding.tvError.visibility = View.GONE
@@ -56,7 +58,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun hideKeyboard() {
-        val inputMethodManager = getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+        val inputMethodManager =
+            getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
         inputMethodManager.hideSoftInputFromWindow(binding.root.windowToken, 0)
     }
 }
