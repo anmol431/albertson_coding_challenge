@@ -1,4 +1,4 @@
-package com.sample.albertson_coding_challenge.retrofit
+package com.sample.albertson_coding_challenge.network
 
 import com.sample.albertson_coding_challenge.BuildConfig
 import okhttp3.OkHttpClient

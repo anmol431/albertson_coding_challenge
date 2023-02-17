@@ -1,4 +1,4 @@
-package com.sample.albertson_coding_challenge.retrofit
+package com.sample.albertson_coding_challenge.network
 
 import com.sample.albertson_coding_challenge.model.AcromineData
 import retrofit2.Call

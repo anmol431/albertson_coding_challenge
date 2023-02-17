@@ -3,7 +3,7 @@ package com.sample.albertson_coding_challenge.repository
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.sample.albertson_coding_challenge.model.AcromineData
-import com.sample.albertson_coding_challenge.retrofit.RetrofitClient
+import com.sample.albertson_coding_challenge.network.RetrofitClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
