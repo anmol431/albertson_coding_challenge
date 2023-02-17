@@ -3,6 +3,7 @@ package com.sample.albertson_coding_challenge.view
 import android.app.Activity
 import android.content.Context
 import android.os.Bundle
+import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -44,8 +45,10 @@ class MainActivity : AppCompatActivity() {
                             binding.rcvMain.adapter = acromineData[0].lfs?.let { LfsListAdapter(it.asList()) }
                         }
                         binding.isDataFound = true
+                        binding.tvError.visibility = View.GONE
                     } else {
                         binding.isDataFound = false
+                        binding.tvError.visibility = View.VISIBLE
                     }
                     binding.isLoading = false
                 }

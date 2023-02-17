@@ -16,6 +16,10 @@
             type="Boolean" />
 
         <variable
+            name="clicked"
+            type="Boolean" />
+
+        <variable
             name="viewModel"
             type="com.sample.albertson_coding_challenge.viewmodel.MainActivityViewModel" />
     </data>
@@ -85,7 +89,7 @@
                     android:text="@string/error_text"
                     android:textColor="@android:color/holo_red_dark"
                     android:textSize="15sp"
-                    android:visibility="@{isDataFound ? View.GONE : View.VISIBLE}"
+                    android:visibility="gone"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
