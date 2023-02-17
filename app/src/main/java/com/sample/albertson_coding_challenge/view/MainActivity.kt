@@ -24,12 +24,11 @@ class MainActivity : AppCompatActivity() {
 
         mainActivityViewModel = ViewModelProvider(this)[MainActivityViewModel::class.java]
 
-        /*  mainActivityViewModel.getUser()!!.observe(this) { serviceSetterGetter ->
+        mainActivityViewModel.getUser()!!.observe(this) { acromineData ->
 
-                val msg = serviceSetterGetter.message
+            println("Data : ${acromineData.sf}")
 
-            }
-            */
+        }
 
     }
 }
